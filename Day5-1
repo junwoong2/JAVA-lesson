@@ -1,0 +1,137 @@
+설계
+- 추상 클래스
+  추상 메서드
+  공통 기능
+
+- 인터페이스
+  추상 메서드
+
+컬렉션 프레임워크
+
+컬렉션(Collection)
+- 데이터 군
+
+프레임 워크(Framework)
+- 표준화된 설계
+
+자료구조
+1. 순차 자료구조
+
+  Collection 인터페이스
+     LIST 인터페이스
+     - 순서가 있는 자료구조 : 배열
+     - 값의 중복 허용
+
+2. 집합 자료구조
+
+  Collection 인터페이스
+    SET 인터페이스
+
+    - 값의 중복이 없는 자료
+    - 순서 유지는 X
+
+3. 사전 자료구조
+
+  MAP 인터페이스
+  키, 값 쌍의 구조
+  키 -> 값을 찾기 위한 키워드
+
+  키 - 중복 X ( 집합 자료 - SET )
+  값 - 중복 O
+
+Collection
+	List 	
+	- 순차 자료구조
+	- 순서가 있는 자료
+	-중복되는 값 O
+
+  	- ArrayList
+	  - 물리적 배열 (10)
+	  - 조회속도 매우 빠르다.
+	  - 중간에 앞에서 제거, 추가, 삭제
+		-> 새로운 배열이 생성
+		-> 메모리 소비가 증가, 연산이 증가
+		-> 성능문제 O
+
+    	- LinkedList
+	  - 논리적 링크 연결로 순차 자료구조 O
+	  - 링크의 연결로 삭제, 추가를 구현
+		(추가, 삭제시 메모리 부담 X)
+	  - 조회속도는 물리적 배열을 사용하는 ArrayList보다는 불리
+	
+   	add(..) : 추가
+  	get(int index) : 조회
+     	contains(Object o) : 포함여부
+     	remove(Object o) : 제거
+     	set(int index, E e) : 교체
+	size() : 크기
+
+	Set 	
+	- 집합 자료구조
+     	- 중복이 없는 자료 O
+     	- 순서가 유지되지 않는 자료 O
+	
+	- HashSet
+	- TreeSet
+		HashSet + 정렬
+		정렬기준을 가지고 정렬
+		- java.lang.Comparable
+		  - compareTo(T o, T u)
+			o - u -> 오름차순
+			u - o -> 내림차순
+	
+			음수 -> 양수
+			  * - 1
+			양수 -> 음수
+			
+	
+
+	- add() : 추가
+	- contains : 포함여부 체크
+	- remove(object o) : 제거
+	- size() : 데이터의 갯수
+
+	중복 : 기준
+	Object
+		hashCode
+		
+		
+		equals
+		
+		== : 주소값이 같음을 의미
+
+
+Map 	
+	- 사전 자료구조
+	- 키, 값의 쌍 구조
+	- 키 : 중복 X ( Set )
+	- 값 : 중복 O
+
+	HashMap
+
+	TreeMap
+		HashMap + 키값 정렬
+
+	put(K key, V value) : 키 값 쌍으로 추가
+	V get(Object key) : 키 값으로 조회
+	remove(Ovject key) : 키값으로 제거
+	size() : 데이터의 개수
+
+	Interface Map.Entry : 데이터를 추가할때마다 Map.Entry 객체가 생성
+	(키, 값, 쌍)
+
+	- 대안적인 정렬기준
+	java.util.Comparator
+		- compare(T u, T o)
+
+
+
+
+표준화된 반복자 제공
+
+Collection 인터페이스에 설계 추가
+Iterator iterator();
+
+Interface Iterator
+	- boolean hasNext() : 다음 데이터가 있는지 체크
+	- E next() : 다음 데이터를 꺼내오는 메서드
