@@ -1,0 +1,32 @@
+HTML 양식(form)
+<form> </form>
+
+- action : 제출 경로
+- method : 제출방식
+	GET/POST
+
+
+
+input
+type
+	text - 한줄 텍스트
+	password - 비밀번호
+	radio - 여러개 선택가능
+	checkbox - 여러개중 하나 선택
+		checked -> 체크된 상태
+	hidden - 숨김입력
+	reset - 초기화
+value
+
+
+button
+type
+	button - 일반버튼
+	submit - 제출버튼
+	reset - 초기화버튼
+
+
+select : 선택박스
+option
+
+textarea : 여러줄 텍스트
