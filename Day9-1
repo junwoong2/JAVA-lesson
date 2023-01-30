@@ -1,0 +1,145 @@
+웹 기초
+1. 요청과 응답 이해하기
+요청(request)
+브라우저가 서버로 요청
+요청 전문
+
+헤더(header)
+- 요청에 대한 정보
+	- 요청 방식(GET, POST)
+	- 요청하는 환경에 대한 정보
+
+- 요청 바디 데이터의 종류(POST)
+
+
+바디(body)
+- 서버에 전송할 데이터(요청방식이 POST)
+
+
+응답(response)
+서버가 응답
+응답 전문
+
+헤더
+
+- 응답 상태
+	2xx : 
+		200 : 정상응답	
+		201 : 작성됨
+	3xx : 
+		페이지가 이동됨
+		301
+		302
+		
+		304 : 캐시됨(cached)
+		- 브라우저에 저장된 파일을 사용
+		- 서버 요청 X
+
+	4xx : 클라이언트 오류 응답 코드 - 사용자쪽 오류
+		400 : Bad Request - 잘못된 요청
+			요청 방식에 문제
+		401 : Unauthorized - 권한 없음
+		403 : forbidden
+		404 : Not found - 페이지 없음
+		405 : Not Allowed Method
+			허용되지 않은 요청 메서드
+	5xx : 서버쪽 오류
+		500 : Internal Server Error
+			- 내부 서버 오류
+			(코드 문제, 서버 자체 문제)
+		502, 503 : Not available Service
+			유지보수상 서비스 중단
+
+	
+- 응답 바디에 전송된 데이터의 종류
+	(content-type)
+
+- 브라우저가 할 동작
+	Location : 주소; -> 브라우저 주소 이동
+	content-type : content-disposition ...
+	-> 바디 내용을 다운로드
+	Set-Cookie : 키=값;
+	-> 브라우저에게 쿠키 저장
+
+바디
+서버가 응답하는 데이터
+
+
+
+2. HTTP - HyperText Transfer Protocol(절차)
+
+
+3. 헤더(header)
+4. HTTP 상태 코드
+5. HTTP 요청 메서드
+
+GET
+https://search.naver.com/search.naver
+?where=nexearch
+sm=top_hty
+fbm=0
+ie=utf8
+query=블로그
+
+질의문(query) - 쿼리스트링(querystring)
+
+POST : 작성하다
+전송데이터
+- content-type : application/x-www-form-urlencoded;
+subject = 글제목&content=글내용...
+
+- content-type : application/json;
+{
+  subject : "글제목",
+  content : "글내용..."
+}
+PUT : 데이터 전체 치환
+PATCH : 데이터의 일부 치환
+DELETE
+OPTIONS
+
+
+서블릿(suvlet)
+javaee 8
+javax
+
+jakarta ee 9
+jakartaa.
+
+server
+
+servant - 하인
+
+1. 서블릿(suvlet)의 개요
+자바의 웹기술 - 서블릿
+javax.survlet.http 패키지
+HttpServlet
+
+doGet
+	HttpServletRequest(인터페이스)
+	- 요청을 처리하거나 조회하는 객체
+	- 사용자가 요청한 데이터(파라미터) 조회
+	
+	HttpServletResponse(인터페이스)
+	- 응답을 처리하는객체
+
+2. 서블릿(suvlet) 클래스 작성하기
+3. web.xml 파일에 서블릿(suvlet) 등록하기
+- web.xml 웹 애플리케이션 배치 설명서 파일
+
+JSP-> 서블릿이 웹을 만들기에 너무 복잡하다
+	- 서블릿 기술의 확장
+
+hello.jsp -> 번역 -> hello_jsp.java(서블릿) -> 컴파일 -> hello_jsp.class -> 실행
+
+_jspInit() : 초기화, 처음 한번만 호출
+
+내장객체 - 기본적으로 자동 생성되는 내장 객체
+_jspService() : 요청, 응답을 처리하는 메서드 매요청마다 호출
+	- HttpServletRequest request; - 요청객체
+	- HttpServletResponse response; - 응답객체
+	- PageContext pageContext;
+	- HttpSession session
+	- ServletContext application
+	- ServletConfig config
+_jspDestroy() : 소멸시, 한번만 호출
