@@ -1,0 +1,107 @@
+스프링
+1. 스프링 프레임워크란?
+Framework : 표준화된 설계
+IOC - Inversion Of Control (제어역전)
+의존 주입(DI)
+
+스프링 데이터 - 
+스프링 시큐리터
+
+
+2. 개발환경 구축하기
+3. 메이븐 설치 및 사용방법 알아보기
+JAVA -> 환경 변수
+
+메이븐 프로젝트 생성
+
+mvn archetype:generate
+
+C:\Users\Administrator\Desktop\문준웅
+
+스프링 프로젝스 생성하기
+1. 메이븐 프로젝트 임포트
+2. 메이븐 의존 설정
+
+spring-context
+
+
+스프링은 객체 컨테이너
+
+스프링의 핵심기능 -> 객체관리
+1. 객체 기본 -> 싱글턴
+
+1. 스프링 DI - 의존성 주입
+- 의존이란?
+- 화원가입의 예
+- 기능 service
+- 데이터에 직접 접근하는 클래스 DAO
+- 정보 전달하는 클래스 DTO
+
+변화 -> 닫혀있는 형태(캡슐화)
+확장 -> 열려있는 상태 -> 의존성 주입
+- 전략패턴
+
+2. 스프링 DI 설정 및 사용
+1) @Configuration
+2) @Bean
+3) @Import
+
+3. 의존 주입
+1) autowired - 자동 주입
+★★★★@Autowired(required=false) ★★★★
+-> 의존성이 없는 객체는 건너뛴다
+@Nullable
+-> 의존하고 있는 setter메서드를 호출
+-> null 값 주입해준다
+
+2) Qualifier
+
+
+4. 컴포넌스 스캔
+- 자동 빈 객체 등록
+@ComponentScan
+자동 빈 등록 애노테이션
+@Configuration
+@Component
+@Service
+@Repository
+@Aspect
+@Controller
+
+
+
+
+☆☆☆☆☆☆정리☆☆☆☆☆☆
+@Configuration - 설정 클래스
+@Bean - 스프링이 관리하는 객체
+@Autowired - 의존 자동 주입
+	required = true
+@Nullable - null 값 주입
+@ComponentScan -> 의존 객체 검색 -> 자동 등록
+	@Configuration
+	@Component
+	@Service
+	@Repository
+	@Aspect
+	@Controller
+@Import -> 설정 클래스 추가
+
+
+빈라이프 사이클
+객체 생성 -> 의존 주입 -> 초기화(initializingBean - afterPropertiesSet) 
+-> 소멸(DisposableBean - destroy())
+
+@Bean
+- iniiMethod - 초기화
+- destroyMethod - 소멸
+
+DB
+- InitializingBean
+	- afterPropertySet
+	-> 의존 설정까지 완료되면 초기에 지정될 설정값을 지정
+- DisposableBEan
+	- destroy()
+	- 객체가 소멸되기 전에 할 작업
+	- ex) DB 자원 해제
+- @Scope
+
