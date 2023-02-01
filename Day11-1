@@ -1,0 +1,44 @@
+스프링 웹 MVC
+
+★★★1. 프로젝트 생성★★★
+1) spring-webmvc
+2) servlet-api
+3) servlet.jsp-api
+
+<scope>provided</scope>
+
+- compiled
+- provided
+- test
+
+2. 이클립스 톰캣 설정
+
+3. 스프링 MVC를 위한 설정
+MvcConfig
+-> MVC 설정
+-> WebMvcConfigurer 인터페이스
+
+/ WEB-INF/view
+
+4. 스프링 MVC 프레임워크 동작 방식
+
+MVC 패턴
+M(Model) - 기능
+	Service
+		DAO(Data Access Object) : 데이터 접근 객체
+		DTO(Data Transfer Object) : 데이터 전달 객체
+
+
+V(View) - 응답, 출력(사용자 화면)
+C(Controller) - 뷰 - 중재자 - 모델
+
+
+타임리프(Thymeleaf)
+1. 프로젝트 생성
+★★★2. 스프링 MVC와 타임리프 연동 설정★★★
+	thymeleaf-spring5
+	thymeleaf-extras-java8time
+	thymeleaf-layout
+
+
+3. 사용하기
