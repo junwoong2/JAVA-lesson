@@ -1,0 +1,44 @@
+개인화된 서비스
+
+쿠키(cookie)
+- 브라우저에 저장되어있는 개인화된 데이터
+- 서버 응답 -> 브라우저 쿠키 등록 -> 요청헤더 쿠키 전송 -> 서버 사용 
+	헤더(Set-Cookie : 키=값; 키=값)
+
+HttpServletRequest 요청
+HttpServletResponse 응답
+서버
+	쿠키등록
+	HttpServletResponse response
+	- addCookie
+
+	쿠키 조회
+
+	스프링 컨테이너
+	HttpServletRequest
+	HttpServletResponse
+	HttpSession
+	Cookie
+
+세션
+데이터 저장 -> 서버
+
+HttpSession
+- setAttribute(String key, Object value); - 세션 등록
+- Object getAttribute(String key); - 세션 조회
+- removeAttribute(String key); - 세션 삭제
+
+쿠키 -> JSESSIONID : 브라우저별로 유일한 값
+		: 서버에 저장되어 있는 세션을 찾는 키값
+
+
+
+인터셉터
+HandlerInterceptor 인터페이스 : 공통기능을
+- preHandle
+	: 컨트롤러 빈의 메서드 실행되기 전
+	- 반환값이 true (컨트롤러 빈 메서드 실행)
+- postHandle
+	: 컨트롤러 빈의 메서드가 실행된 직후, 출력 전
+- afterCompletion
+	: 출력 완료 이후
