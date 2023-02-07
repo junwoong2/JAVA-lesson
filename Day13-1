@@ -1,0 +1,99 @@
+SQL
+MySQL
+
+DDL 언어
+(Data Definition Language)
+데이터 정의 언어 - 데이터의 틀을 정의하는 언어
+
+구조
+데이터베이스(Database)
+CREATE DATABASE 데이터베이스명;
+SHOW DATABASES
+
+USE 데이터베이스명; - 데이터베이스 선택
+DROP DATABASE 데이터베이스명 - 데이터베이스 없애기
+
+테이블(테이블)
+CREATE TABLE 테이블명(
+	컬럼명(속성명, 필드명) 자료형 제약조건,
+	컬럼명 자료형 제약조건,
+	컬럼명 자료형 제약조건
+);
+
+자료형
+숫자
+- 정수
+	INT
+
+- 실수
+	FLOAT
+
+
+문자
+- CHAR(자리수)
+EX) 	CHAR(5) ->  5자리 문자
+	ab -> 5자리를 차지
+	
+- VARCHAR(자리수)
+EX)	VARCHAR(20) -> 최대 20자까지 문자
+	ab -> 2자리 차지
+
+- TEXT - 여러줄 텍스트
+
+날짜
+	DATE -> 날짜
+	TIME -> 시간
+	DATETIME -> 날짜 + 시간
+
+기타
+	ENUM
+	SET
+
+제약조건
+	데이터를 대표하는 값 PRIMARY KEY
+			(UNIQUE+NOT NULL)
+	자동으로 증감되는 값 AUTO_INCREMENT
+	중복이 되지 않은 값 UNIQUE
+	특정 수치 이상 입력되는 조건 CHECK
+	값이 없으면 기본값 DEFAULT
+	필수 항목 NOT NULL
+	...
+
+DML 언어
+(Data Manipulation Language)
+데이터 조작 언어 - 데이터 추가, 수정, 삭제, 조회
+
+데이터 추가
+INSERT
+
+INSERT INTO 테이블명 (컬러명, ...) VALUES("값", ...)
+
+데이터 수정
+UPDATE
+
+데이터 삭제
+DELETE FROM 테이블명
+
+조회
+
+SELECT
+SELECT[ALL | DISTINCT] 속성이름(들) FROM 테이블명
+WHERE 검색조건
+GROUP BY 속성이름 ...
+HAVING 검색조건(통계용 함수)
+ORDER BY 속성이름 [ASC | DESC]
+
+ASC -> Assendingorder
+DESC -> Decending Order
+
+
+ALL - 모든 데이터
+DISTINCT - 중복 없는 데이터
+
+AS(Alias)
+
+
+표준 SQL
+INNER JOIN : 내부 조인(동등 조인)
+
+INNER ON : 공통 값
